@@ -5,6 +5,13 @@ package main
 //! The decoder will not make square brackets printable. 
 //TODO write input to file
 //TODO parse input 
+/*
+
+* Read in a line, 
+* parse line by line. 
+
+
+*/
 
 //TODO error handling 
 /*
