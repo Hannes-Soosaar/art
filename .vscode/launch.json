@@ -9,9 +9,9 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${fileDirname}",
+            "program": "cmd/art/art.go",
             "console": "integratedTerminal",
-            "args": ["arg1"]
+            "args": ["\"[2 3][3 4 3]3     42]3   423\""]
         }
     ]
 }

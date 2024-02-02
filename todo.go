@@ -8,17 +8,13 @@ package main
 /*
 
 * Read in a line, 
-* parse line by line. 
+* 
 
 
 */
-
-//TODO error handling 
 /*
-1)The first argument is not a number
 2)The arguments are not separated by a space
 3)There is no second argument, I.e. empty strings are invalid
-4)Square brackets are unbalanced
 */
 //TODO  Encode mode **This must be toggled on with a command line argument 
 //TODO  create multiline Decoder ** This must be toggled on with a command line 
