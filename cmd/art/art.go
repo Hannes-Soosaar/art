@@ -17,7 +17,7 @@ func initializeAndRun(inputArgs []string) {
 	if len(inputArgs) == 2 && inputArgs[1] == "-h" {
 		fmt.Println(constants.HELP)
 	} else if len(inputArgs) == 2 {
-		fmt.Println("decode")
+		fmt.Println("CASE DECODE")
 		utils.DecodeInput(inputArgs[1])
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-encode" {
 		fmt.Println("encode")
@@ -29,8 +29,7 @@ func initializeAndRun(inputArgs []string) {
 		//TODO add functionality to encode a file
 		fmt.Println("encode a file")
 	} else {
-
-		//make a internal parser for this 
+		//make a internal parser for this
 		inputString := ""
 		for i, args := range inputArgs {
 			if i > 0 {

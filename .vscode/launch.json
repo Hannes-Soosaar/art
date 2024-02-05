@@ -11,7 +11,7 @@
             "mode": "auto",
             "program": "cmd/art/art.go",
             "console": "integratedTerminal",
-            "args": ["\"[2 3][3 4 3]3     42]3   423\""]
+            "args": ["\"[2  ][3 43]\""]
         }
     ]
 }

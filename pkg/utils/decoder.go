@@ -7,18 +7,12 @@ import (
 )
 
 func DecodeInput(input string) {
-	var (
-		isBalanced bool
-		firstArgIsNumber bool
-	)
-	isBalanced = internal.BracketBalance(input)
-	firstArgIsNumber = internal.FirstArgIsNumber(input)
-	fmt.Println(isBalanced)
-	fmt.Println(firstArgIsNumber)
-
-	fmt.Println(input)
+	if internal.ValidateInput(input) {
+		fmt.Println(internal.ValidateInput(input))
+	}
 }
 
+// read in a file and Decode it
 func DecodeFile(path string) {
 	// get content
 	// validate content

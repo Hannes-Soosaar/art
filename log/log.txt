@@ -1,24 +1,18 @@
-decode
+93
+52
+52
+52
+93
+52
+52
+52
 true
-false
-a[53][343][a32]
-decode
-false
-false
-asd][5s][gf]
-decode
-false
-false
-[adf]fd23]545[afd3253]
-decode
-false
+"[2 ][3 43]" 
+93
+93
+93
+93
+93
+93
 true
-[23][343]342]3423
-decode
-true
-false
-[[[[]]]]
-false
-true
-"[2 3][3 4 3]3 42]3 423" 
-"[2 3][3 4 3]3 42]3 423" 
+"[2 ]" 
