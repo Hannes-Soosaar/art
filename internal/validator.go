@@ -95,3 +95,5 @@ func getEncodedSection(sectionOfInputToAnalyze string) (encodedSection string) {
 	encodedSection = sectionOfInputToAnalyze
 	return encodedSection
 }
+
+// this branch must be pushed to origin
