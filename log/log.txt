@@ -1,18 +1,41 @@
-93
-52
-52
-52
-93
-52
-52
-52
+CASE DECODE
+[5 3]
+5
+True
+[3 3]
+5
+True
+[3 2]
+5
+True
+[5 3]
+5
+True
+[3 3]
+5
+True
+[3 2]
+5
+True
 true
-"[2 ][3 43]" 
-93
-93
-93
-93
-93
-93
-true
-"[2 ]" 
+CASE DECODE
+[2          d]
+14
+False
+[2          d]Error: 
+ There is no second argument
+CASE DECODE
+Error: 
+ Square brackets are unbalanced
+CASE DECODE
+[2 ]
+4
+False
+[2 ]Error: 
+ There is no second argument
+CASE DECODE
+[3  ]
+5
+False
+[3  ]Error: 
+ There is no second argument

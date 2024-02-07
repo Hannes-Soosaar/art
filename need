@@ -1,0 +1,140 @@
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+true
+'[2 d][3 43]' 
+Error: 
+ Square brackets are unbalanced
+'[2 d' 
+[2 ]
+4
+False
+[2 ]Error: 
+ There is no second argument
+'[2 ]' 
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+true
+'[2 d][3 43]' 
+Error: 
+ Square brackets are unbalanced
+'[2 d' 
+[2 ]
+4
+False
+[2 ]Error: 
+ There is no second argument
+'[2 ]' 
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+true
+'[2 d][3 43]' 
+Error: 
+ Square brackets are unbalanced
+'[2 d' 
+[2 ]
+4
+False
+[2 ]Error: 
+ There is no second argument
+'[2 ]' 
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[2 d]
+5
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+[3 43]
+6
+True
+true
+'[2 d][3 43]' 
+Error: 
+ Square brackets are unbalanced
+'[2 d' 
+[2 ]
+4
+False
+[2 ]Error: 
+ There is no second argument
+'[2 ]' 

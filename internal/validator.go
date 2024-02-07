@@ -38,9 +38,13 @@ func firstArgIsNumber(encodedSection string) (firstArgIsNumber bool) {
 
 // Checks to see if the encoded section designated for data that is compressed is not blank
 func hasSecondArg(encodedSection string) (hasSecondArg bool) {
-	thirdArg := rune(encodedSection[3])
-	fmt.Println(thirdArg)
-	return thirdArg != ' '
+	fmt.Println(len(encodedSection))
+	if len(encodedSection) <= 4 || encodedSection[3] == byte(' ') {
+		fmt.Println("False")
+		return false
+	}
+	fmt.Println("True")
+	return true
 }
 
 // Checks to see if the second char is a space
@@ -67,10 +71,7 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 			}
 			if endIndex > 0 {
 				encodedSection := getEncodedSection(inputToAnalyze[startIndex : endIndex+1])
-				// if len(encodedSection) < 5 {
-				// 	errors.ErrInvalidInput() //TODO make a dedicated error
-				// 	return false
-				// } else
+				fmt.Println(encodedSection)
 				if !firstArgIsNumber(encodedSection) {
 					errors.ErrNotNum()
 					return false
@@ -78,6 +79,7 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 					errors.ErrNoSpace()
 					return false
 				} else if !hasSecondArg(encodedSection) {
+					fmt.Print(encodedSection)
 					errors.ErrNoSecondArg()
 					return false
 				}

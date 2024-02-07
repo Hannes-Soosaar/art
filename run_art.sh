@@ -8,18 +8,24 @@ rm ./log/log.txt
 arguments=(
     # "-h"
     # "-encode"
-    # "-multi filetodecode.txt "
+    # "-multi filetodecode.txt"
     # "-multi -encode filetoencode.txt "
     # " random text to see if it will triger help"
-    # "-h" # test help / PASS
+    #  "-h"  # test help / PASS
     # ' -encode "[4 5][3 34]"' # test encode // PASS
-    # '"[5 3][3 3][3 2]"' # true balanced brackets no errors // PASS
+
+)
+
+sl_arguments=(
+    "[5 3][3 3][3 2]" # true balanced brackets no errors // PASS
     # "asd][5 s][gf]" #false unbalance brackets // PASS
     # '"[a df]fd23545[afd3253]"'   #false first arg not a number // PASS
-    '"[2  ][3 43]"'   #false second arg a space //FAIL
-    '"[2 ]"'   #false second arg a missing      // FAIL 
+    "[2          d][3 43]"   #false second arg a space // PASS
+     '"[2    d"'   #false unbalanced // Pass
+    "[2 ]"   #false second arg a missing      // PASS 
+    "[3  ]"   #false second arg a missing    // PASS  
     # '"[2d]"'   #false second nospace // PASS 
-    # "[[[[]]]]"  #balance but error 1) not a numebr 2) no space // PASS 
+    # # "[[[[]]]]"  #balance but error 1) not a numebr 2) no space // PASS 
     # '"[2 3][3 4 3]3     423   423"' #true // PASS
 )
 
@@ -45,12 +51,37 @@ for args in "${arguments[@]}"; do
     echo -e "${YELLOW}"running: $args
     echo ""
     echo -e "${GREEN}--------START--------${BLUE}"
-    go run $program_path $args | tee -a $output_file
+    go run "$program_path" $args | tee -a "$output_file" 
     # Add a sleep between runs if needed
     # sleep 1
     echo -e "${RED}-------END----------${REST}"
     echo ""
 done
+
+for args in "${arguments[@]}"; do
+    
+    echo -e "${YELLOW}"running: $args
+    echo ""
+    echo -e "${GREEN}--------START--------${BLUE}"
+    go run "$program_path" $args | tee -a "$output_file" 
+    # Add a sleep between runs if needed
+    # sleep 1
+    echo -e "${RED}-------END----------${REST}"
+    echo ""
+done
+
+for args in "${sl_arguments[@]}"; do
+    
+    echo -e "${YELLOW}"running: $args
+    echo ""
+    echo -e "${GREEN}--------START--------${BLUE}"
+    go run "$program_path" "$args" | tee -a "$output_file" 
+    # Add a sleep between runs if needed
+    # sleep 1
+    echo -e "${RED}-------END----------${REST}"
+    echo ""
+done
+
 
 else 
 echo "you need to install go, before running the app"
