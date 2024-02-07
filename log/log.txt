@@ -8,34 +8,18 @@ True
 [3 2]
 5
 True
-[5 3]
+The decoded picture: 33333333333333333333333333333333333333333333333333333[5 3]333333333333333333333333333333333333333333333333333[3 3]222222222222222222222222222222222222222222222222222[3 2] 
+CASE DECODE
+[5 #]
 5
 True
-[3 3]
+[5 -_]
+6
+True
+[5 -_]
+6
+True
+[5 #]
 5
 True
-[3 2]
-5
-True
-true
-CASE DECODE
-[2          d]
-14
-False
-[2          d]Error: 
- There is no second argument
-CASE DECODE
-Error: 
- Square brackets are unbalanced
-CASE DECODE
-[2 ]
-4
-False
-[2 ]Error: 
- There is no second argument
-CASE DECODE
-[3  ]
-5
-False
-[3  ]Error: 
- There is no second argument
+The decoded picture: #####################################################[5 #]-----------------------------------------------------[5 -_]-#####################################################[5 #] 
