@@ -46,13 +46,21 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 
 // Checks to see if the second char is a space
 func separatedBySpace(encodedSection string) (separatedBySpace bool) {
-	if encodedSection[2] == ' ' {
-		return true
-	} else {
-		return false
+
+	var hasNumber bool
+
+	for _, char := range encodedSection {
+		if char > '0' && char < '9' {
+			hasNumber = true
+		} else if char == ' ' && hasNumber {
+			return true
+		}
 	}
+	return false
+
 }
-// checks if the input is valid and can be parsed encoded or decoded 
+
+// checks if the input is valid and can be parsed encoded or decoded
 func ValidateInput(inputToAnalyze string) (validInput bool) {
 	var (
 		startIndex int = 0

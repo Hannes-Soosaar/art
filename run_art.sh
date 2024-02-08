@@ -20,8 +20,10 @@ sl_arguments=(
     "[5 3][3 3][3 2]" # true balanced brackets no errors // PASS
     # "asd][5 s][gf]" #false unbalance brackets // PASS
     # '"[a df]fd23545[afd3253]"'   #false first arg not a number // PASS
-    "[5 #][5 -_]-[5 #]"   #false second arg a space // PASS
+    "[9 #][5 -_]-[5 #]"   #false second arg a space // PASS
+    "[9 D]"   #false second arg a space // PASS
     #  '"[2    d"'   #false unbalanced // Pass
+    #false unbalanced // Pass
     # "[2 ]"   #false second arg a missing      // PASS 
     # "[3  ]"   #false second arg a missing    // PASS  
     # '"[2d]"'   #false second nospace // PASS 
@@ -52,20 +54,6 @@ for args in "${arguments[@]}"; do
     echo ""
     echo -e "${GREEN}--------START--------${BLUE}"
     go run "$program_path" $args | tee -a "$output_file" 
-    # Add a sleep between runs if needed
-    # sleep 1
-    echo -e "${RED}-------END----------${REST}"
-    echo ""
-done
-
-for args in "${arguments[@]}"; do
-    
-    echo -e "${YELLOW}"running: $args
-    echo ""
-    echo -e "${GREEN}--------START--------${BLUE}"
-    go run "$program_path" $args | tee -a "$output_file" 
-    # Add a sleep between runs if needed
-    # sleep 1
     echo -e "${RED}-------END----------${REST}"
     echo ""
 done
@@ -76,12 +64,9 @@ for args in "${sl_arguments[@]}"; do
     echo ""
     echo -e "${GREEN}--------START--------${BLUE}"
     go run "$program_path" "$args" | tee -a "$output_file" 
-    # Add a sleep between runs if needed
-    # sleep 1
     echo -e "${RED}-------END----------${REST}"
     echo ""
 done
-
 
 else 
 echo "you need to install go, before running the app"

@@ -38,7 +38,7 @@ func DecodeInput(inputToDecode string) (decodedOutput string) {
 }
 
 func DecodeFile(path string) {
-
+// TODO add functionality
 }
 
 func decodeSection(cleanSection string) (decodedSection string) {

@@ -2,7 +2,9 @@ Extracted section : [5 3]
 Extracted section : [3 3] 
 Extracted section : [3 2] 
 FINAL DECODED  3 3 3 3 3 3 3 3 2 2 2 
-Extracted section : [5 #] 
-Extracted section : [5 -_] 
-Extracted section : [5 #] 
-FINAL DECODED  # # # # # -_ -_ -_ -_ -_ # # # # # 
+Error: 
+ The arguments are not separated by a space
+FINAL DECODED  
+Error: 
+ The arguments are not separated by a space
+FINAL DECODED  
