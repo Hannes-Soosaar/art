@@ -38,12 +38,9 @@ func firstArgIsNumber(encodedSection string) (firstArgIsNumber bool) {
 
 // Checks to see if the encoded section designated for data that is compressed is not blank
 func hasSecondArg(encodedSection string) (hasSecondArg bool) {
-	fmt.Println(len(encodedSection))
 	if len(encodedSection) <= 4 || encodedSection[3] == byte(' ') {
-		fmt.Println("False")
 		return false
 	}
-	fmt.Println("True")
 	return true
 }
 
@@ -55,6 +52,7 @@ func separatedBySpace(encodedSection string) (separatedBySpace bool) {
 		return false
 	}
 }
+// checks if the input is valid and can be parsed encoded or decoded 
 func ValidateInput(inputToAnalyze string) (validInput bool) {
 	var (
 		startIndex int = 0
@@ -71,7 +69,6 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 			}
 			if endIndex > 0 {
 				encodedSection := getEncodedSection(inputToAnalyze[startIndex : endIndex+1])
-				fmt.Println(encodedSection)
 				if !firstArgIsNumber(encodedSection) {
 					errors.ErrNotNum()
 					return false

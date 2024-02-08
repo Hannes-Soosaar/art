@@ -19,7 +19,6 @@ func initializeAndRun(inputArgs []string) {
 	if len(inputArgs) == 2 && inputArgs[1] == "-h" {
 		fmt.Println(constants.HELP)
 	} else if len(inputArgs) == 2 {
-		fmt.Println("CASE DECODE")
 		utils.DecodeInput(inputArgs[1])
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-encode" {
 		fmt.Println("encode")
@@ -39,6 +38,5 @@ func initializeAndRun(inputArgs []string) {
 			}
 		}
 		utils.DecodeInput(inputString)
-		fmt.Println(inputString)
 	}
 }

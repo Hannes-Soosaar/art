@@ -2,33 +2,50 @@ package utils
 
 import (
 	"fmt"
+	"strconv"
 
 	"gitea.kood.tech/hannessoosaar/art/internal"
 )
 
-func DecodeInput(input string) (decodedOutput string) {
-	decodedOutput = ""
-	if internal.ValidateInput(input) {
-		for i, char := range input {
+func DecodeInput(inputToDecode string) (decodedOutput string) {
+	var (
+		omitCounter    int
+		encodedSection string
+		cleanSection   string
+		decodedSection string
+	)
+	if internal.ValidateInput(inputToDecode) {
+		for i, char := range inputToDecode {
 			if char == '[' {
-				multiplier := int(input[i+1])
-				character := input[i+3]
-				for j := 0; j < multiplier; j++ {
-					decodedOutput += string(character)
-				}
+				encodedSection = internal.ExtractEncodedSection(inputToDecode[i:])
+				omitCounter = len(encodedSection)
+				cleanSection = internal.RemoveFirstAndLastChar(encodedSection)
+				decodedSection = decodeSection(cleanSection)
+				// fmt.Printf("SECTION TO BE ADDED: %s  FULL TEXT : %s \n", decodedSection, decodedOutput)
+				decodedOutput += decodedSection
 			}
-			decodedOutput += string(char)
 		}
-		fmt.Printf("The decoded picture: %s \n", decodedOutput)
-		return decodedOutput
+		if omitCounter > 0 {
+			omitCounter--
+		} else {
+			decodedOutput += inputToDecode
+			fmt.Println(decodedOutput) // should grow
+		}
+
 	}
-	return ""
+	fmt.Printf("FINAL DECODED %s \n" , decodedOutput)
+	return decodedOutput
 }
 
-// read in a file and Decode it
 func DecodeFile(path string) {
-	// get content
-	// validate content
-	// parse content
-	// output content
+
+}
+
+func decodeSection(cleanSection string) (decodedSection string) {
+	multiplier, _ := strconv.Atoi(string(cleanSection[0]))
+	compressedSection := string(cleanSection[1:])
+	for i := 0; i < multiplier; i++ {
+		decodedSection += compressedSection
+	}
+	return decodedSection
 }
