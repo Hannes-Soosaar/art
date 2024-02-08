@@ -2,9 +2,13 @@ Extracted section : [5 3]
 Extracted section : [3 3] 
 Extracted section : [3 2] 
 FINAL DECODED  3 3 3 3 3 3 3 3 2 2 2 
-Error: 
- The arguments are not separated by a space
+Extracted section : [5 3] 
+Extracted section : [3 3] 
+Extracted section : [3 2] 
+FINAL DECODED  3 3 3 3 3 3 3 3 2 2 2 
+[15 #]Error: 
+ There is no second argument
 FINAL DECODED  
-Error: 
- The arguments are not separated by a space
+[19 D]Error: 
+ There is no second argument
 FINAL DECODED  

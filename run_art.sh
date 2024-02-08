@@ -18,10 +18,11 @@ arguments=(
 
 sl_arguments=(
     "[5 3][3 3][3 2]" # true balanced brackets no errors // PASS
+    "[5 3][3 3][3 2]" # true balanced brackets no errors // PASS
     # "asd][5 s][gf]" #false unbalance brackets // PASS
     # '"[a df]fd23545[afd3253]"'   #false first arg not a number // PASS
-    "[9 #][5 -_]-[5 #]"   #false second arg a space // PASS
-    "[9 D]"   #false second arg a space // PASS
+    "[15 #][5 -_]-[5 #]"   #false second arg a space // PASS
+    "[19 D]"   #false second arg a space // PASS
     #  '"[2    d"'   #false unbalanced // Pass
     #false unbalanced // Pass
     # "[2 ]"   #false second arg a missing      // PASS 

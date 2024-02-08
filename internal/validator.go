@@ -38,7 +38,7 @@ func firstArgIsNumber(encodedSection string) (firstArgIsNumber bool) {
 
 // Checks to see if the encoded section designated for data that is compressed is not blank
 func hasSecondArg(encodedSection string) (hasSecondArg bool) {
-	if len(encodedSection) <= 4 || encodedSection[3] == byte(' ') {
+	if len(encodedSection) <= 4 || encodedSection[3] == byte(' ') { // need to address the issue of where the space is.
 		return false
 	}
 	return true
@@ -48,16 +48,14 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 func separatedBySpace(encodedSection string) (separatedBySpace bool) {
 
 	var hasNumber bool
-
 	for _, char := range encodedSection {
-		if char > '0' && char < '9' {
+		if char >= '0' && char <= '9' {
 			hasNumber = true
 		} else if char == ' ' && hasNumber {
 			return true
 		}
 	}
 	return false
-
 }
 
 // checks if the input is valid and can be parsed encoded or decoded
@@ -102,5 +100,3 @@ func getEncodedSection(sectionOfInputToAnalyze string) (encodedSection string) {
 	encodedSection = sectionOfInputToAnalyze
 	return encodedSection
 }
-
-// this branch must be pushed to origin
