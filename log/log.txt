@@ -1,14 +1,6 @@
-Extracted section : [5 3] 
-Extracted section : [3 3] 
-Extracted section : [3 2] 
-FINAL DECODED  3 3 3 3 3 3 3 3 2 2 2 
-Extracted section : [5 3] 
-Extracted section : [3 3] 
-Extracted section : [3 2] 
-FINAL DECODED  3 3 3 3 3 3 3 3 2 2 2 
-[15 #]Error: 
- There is no second argument
-FINAL DECODED  
-[19 D]Error: 
- There is no second argument
-FINAL DECODED  
+Extracted section : [5 #] 
+Extracted section : [5 -_] 
+Extracted section : [5 #] 
+FINAL DECODED #####-_-_-_-_-_-##### 
+Extracted section : [10 D] 
+FINAL DECODED ABCDDDDDDDDDDEFG 

@@ -13,9 +13,6 @@ func main() {
 }
 
 func initializeAndRun(inputArgs []string) {
-	for _, arg := range inputArgs {
-		println(arg)
-	}
 	if len(inputArgs) == 2 && inputArgs[1] == "-h" {
 		fmt.Println(constants.HELP)
 	} else if len(inputArgs) == 2 {

@@ -2,10 +2,15 @@ package internal
 
 import (
 	"fmt"
+	"strings"
 	"unicode"
 
 	"gitea.kood.tech/hannessoosaar/art/errors"
 )
+
+/*The validator file holds all functions that return a boolean
+with the exception of one getter to make the code more readable
+*/
 
 // Takes in a string and analyzes it to to see if square [] are balanced
 func bracketBalance(inputToAnalyze string) (isBalanced bool) {
@@ -36,9 +41,13 @@ func firstArgIsNumber(encodedSection string) (firstArgIsNumber bool) {
 	return unicode.IsDigit(rune(encodedSection[1]))
 }
 
-// Checks to see if the encoded section designated for data that is compressed is not blank
+// Checks to see if the encoded section designated for compressed data is not blank
 func hasSecondArg(encodedSection string) (hasSecondArg bool) {
-	if len(encodedSection) <= 4 || encodedSection[3] == byte(' ') { // need to address the issue of where the space is.
+	if len(encodedSection) <= 4 {
+		return false
+	}
+	sections := strings.SplitN(RemoveFirstAndLastChar(encodedSection), " ", 2)
+	if len(sections[1]) < 1 || sections[1] == " " {
 		return false
 	}
 	return true
@@ -46,10 +55,9 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 
 // Checks to see if the second char is a space
 func separatedBySpace(encodedSection string) (separatedBySpace bool) {
-
 	var hasNumber bool
 	for _, char := range encodedSection {
-		if char >= '0' && char <= '9' {
+		if char >= '0' && char <= '9' { //  could use the unicode.IsDigit( r rune)
 			hasNumber = true
 		} else if char == ' ' && hasNumber {
 			return true
