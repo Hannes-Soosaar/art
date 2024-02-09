@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"gitea.kood.tech/hannessoosaar/art/constants"
+	"gitea.kood.tech/hannessoosaar/art/internal"
 	"gitea.kood.tech/hannessoosaar/art/pkg/utils"
 )
 
@@ -16,13 +17,12 @@ func initializeAndRun(inputArgs []string) {
 	if len(inputArgs) == 2 && inputArgs[1] == "-h" {
 		fmt.Println(constants.HELP)
 	} else if len(inputArgs) == 2 {
-		utils.DecodeInput(inputArgs[1])
+		internal.DisplayDecodedSingle(utils.DecodeInput(inputArgs[1]))
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-encode" {
 		fmt.Println("encode")
 		utils.EncodeInput(inputArgs[2])
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-multi" {
-		//TODO add functionality to decode a file
-		fmt.Println("decode a file ")
+		internal.DisplayDecodedFile(utils.DecodeFile(inputArgs[2]))
 	} else if len(inputArgs) == 4 && inputArgs[1] == "-multi" && inputArgs[2] == "-encode" {
 		//TODO add functionality to encode a file
 		fmt.Println("encode a file")

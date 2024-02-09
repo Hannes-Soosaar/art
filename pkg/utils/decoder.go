@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -31,12 +30,19 @@ func DecodeInput(inputToDecode string) (decodedOutput string) {
 			}
 		}
 	}
-	fmt.Printf("FINAL DECODED %s \n", decodedOutput)
 	return decodedOutput
 }
 
-func DecodeFile(path string) {
-	// TODO add functionality
+func DecodeFile(path string) []string {
+	fileContent := internal.GetFileContent(internal.OpenFile(path))
+	var decodedFile []string
+	for _, content := range fileContent {
+		decodedOutput := DecodeInput(content)
+		decodedFile = append(decodedFile, decodedOutput+"\n")
+		//TODO: need to have it print to a file
+		//TODO: decode the content
+	}
+	return decodedFile
 }
 
 func decodeSection(cleanSection string) (decodedSection string) {

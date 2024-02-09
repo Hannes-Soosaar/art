@@ -47,7 +47,7 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 		return false
 	}
 	sections := strings.SplitN(RemoveFirstAndLastChar(encodedSection), " ", 2)
-	if len(sections[1]) < 1 || sections[1] == " " {
+	if len(sections[1]) < 1 {
 		return false
 	}
 	return true

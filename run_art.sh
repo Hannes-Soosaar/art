@@ -8,7 +8,10 @@ rm ./log/log.txt
 arguments=(
     # "-h"
     # "-encode"
-    # "-multi filetodecode.txt"
+    "-multi assets/input/encoded/cats.encoded.txt"
+    "-multi assets/input/encoded/kood.encoded.txt"
+    "-multi assets/input/encoded/lion.encoded.txt"
+    "-multi assets/input/encoded/plane.encoded.txt"
     # "-multi -encode filetoencode.txt "
     # " random text to see if it will triger help"
     #  "-h"  # test help / PASS
@@ -17,8 +20,8 @@ arguments=(
 )
 
 sl_arguments=(
-    "[5 #][5 -_]-[5 #]" # true balanced brackets no errors 
-    "ABC[10 D]EFG" # true balanced brackets no errors 
+    # "[5 #][5 -_]-[5 #]" # true balanced brackets no errors 
+    # "ABC[10 D]EFG" # true balanced brackets no errors 
     # "asd][5 s][gf]" #false unbalance brackets //
     # '"[a df]fd23545[afd3253]"'   #false first arg not a number 
     # "[15 #]       [5 -_] - f d [5 #]"   #false second arg a space 
