@@ -33,14 +33,12 @@ func DecodeInput(inputToDecode string) (decodedOutput string) {
 	return decodedOutput
 }
 
-func DecodeFile(path string) []string {
+func DecodeFile(path string) (decodedFile []string) {
 	fileContent := internal.GetFileContent(internal.OpenFile(path))
-	var decodedFile []string
 	for _, content := range fileContent {
 		decodedOutput := DecodeInput(content)
 		decodedFile = append(decodedFile, decodedOutput+"\n")
 		//TODO: need to have it print to a file
-		//TODO: decode the content
 	}
 	return decodedFile
 }

@@ -8,10 +8,13 @@ rm ./log/log.txt
 arguments=(
     # "-h"
     # "-encode"
-    "-multi assets/input/encoded/cats.encoded.txt"
-    "-multi assets/input/encoded/kood.encoded.txt"
-    "-multi assets/input/encoded/lion.encoded.txt"
-    "-multi assets/input/encoded/plane.encoded.txt"
+    # "-multi assets/input/encoded/cats.encoded.txt"
+    # "-multi assets/input/encoded/kood.encoded.txt"
+    # "-multi assets/input/encoded/lion.encoded.txt"
+    # "-multi assets/input/encoded/plane.encoded.txt"
+    "-encode --15454111115445454AAAAAAAAAAAABBBBBBBBBBBCCCCDE"
+
+
     # "-multi -encode filetoencode.txt "
     # " random text to see if it will triger help"
     #  "-h"  # test help / PASS

@@ -8,4 +8,5 @@ var (
 	ERR_ARG_NO_SPACE      = "Error: \n The arguments are not separated by a space"
 	ERR_ARG_NO_SECOND_ARG = "Error: \n There is no second argument"
 	ERR_ARG_UNBALANCED    = "Error: \n Square brackets are unbalanced"
+	ERR_OPENING_FILE      = "Error: \n file does not exist or the path is wrong"
 )

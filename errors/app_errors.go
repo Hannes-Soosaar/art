@@ -29,3 +29,7 @@ func ErrWritingFile() {
 func ErrInvalidInput() {
 	fmt.Println(constants.HELP)
 }
+
+func ErrOpeningFile(){
+	fmt.Println(constants.ERR_OPENING_FILE)
+}

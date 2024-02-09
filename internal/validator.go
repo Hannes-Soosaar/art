@@ -82,7 +82,7 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 				endIndex = i
 			}
 			if endIndex > 0 {
-				encodedSection := getEncodedSection(inputToAnalyze[startIndex : endIndex+1])
+				encodedSection := inputToAnalyze[startIndex : endIndex+1]
 				if !firstArgIsNumber(encodedSection) {
 					errors.ErrNotNum()
 					return false
@@ -101,10 +101,4 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 		return false
 	}
 	return true
-}
-
-// to make things more readable will return only a section of the string.
-func getEncodedSection(sectionOfInputToAnalyze string) (encodedSection string) {
-	encodedSection = sectionOfInputToAnalyze
-	return encodedSection
 }
