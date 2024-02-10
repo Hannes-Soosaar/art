@@ -20,8 +20,7 @@ func EncodeInput(inputString string) (encodedString string) {
 	)
 	charCount := 1
 	for _, char := range inputString {
-		if char == lastChar {
-			// startIndex = i
+		if char == lastChar { 
 			charCount++
 		} else if charCount > 3 && char != lastChar {
 			tempString += "[" + strconv.Itoa(charCount) + " " + string(lastChar) + "]"
@@ -32,12 +31,14 @@ func EncodeInput(inputString string) (encodedString string) {
 			lastChar = char
 		}
 	}
+	
 	if charCount == 1 {
 		tempString += string(lastChar)
 	} else {
 		tempString += "[" + strconv.Itoa(charCount) + " " + string(lastChar) + "]"
 	}
-	// fmt.Println(tempString)
+	//TODO: leftoff here, need to find the substing /strings that repeat
+
 	return tempString
 }
 
