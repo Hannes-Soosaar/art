@@ -38,7 +38,6 @@ func DecodeFile(path string) (decodedFile []string) {
 	for _, content := range fileContent {
 		decodedOutput := DecodeInput(content)
 		decodedFile = append(decodedFile, decodedOutput+"\n")
-		//TODO: need to have it print to a file
 	}
 	return decodedFile
 }

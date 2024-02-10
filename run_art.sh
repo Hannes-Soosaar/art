@@ -7,15 +7,16 @@ rm ./log/log.txt
 # Array of arguments the number of arguments is the number of times the programm will be launced
 arguments=(
     # "-h" #PASS
-    # "-e" # PASS 
+    # "-e" # PASS  it will try do decode -e if no second arg
     # "-m assets/input/encoded/cats.encoded.txt" #PASS
     # "-m assets/input/encoded/kood.encoded.txt" #PASS
     # "-m assets/input/encoded/lion.encoded.txt" #PASS
     # "-m assets/input/encoded/plane.encoded.txt" #PASS
-    # "-e --15454111115445454AAAAAAAAAAAABBBBBBBBBBBCCCCDE" #PASS
-    # "-m -e filetoencode.txt"
-    # "-m -e filetoencode2.txt"
-    # "-m -2d filetoencode3.txt"
+    "-m -e assets/input/decoded/cats.art.txt"
+    "-m -e assets/input/decoded/kood.art.txt"
+    "-m -e assets/input/decoded/lion.art.txt"
+    "-m -e assets/input/decoded/plane.txt"
+
 #     -e "[45 ][334]"
 #     "-m -e filetoencode.txt " #FAIL
 #     "random text to see if it will triger help"  #FAIL // Check for max amount of chars
@@ -38,10 +39,13 @@ sl_arguments=(
 )
 
 vect_arguments=(
-    '-e "45dddddddddddddddddd fdsaffasdffffffff334"'
-    '-e "abcdefghijklmn op galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    '-e "[][[[[[]][][[]]]]]"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    '-e "abcdefghijklmn op dddfdfff  222222222222221 ***-*-*-*-**-*-************galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
+    '-e ""'
+    # '-e "abcdefghijklmn op galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
+    # '-e "[][[[[[]][][[]]]]]"'  # fail case // FAIL  // Bug it will still do the same validation for encoding 
+    # '-e "abcdefghijklmn op dddfdfff  222222222222221 ***-*-*-*-**-*-************galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
+    # '-e "| | | | | | | | | | | | |\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
+    # '-e "   _\/\\\////\\\____/\\\///\\\____/\\\///\\\____/\\\\\\\\\__"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
+    # '-e "--15454111115445454AAAAAAAAAAAABBBBBBBBBBBCCCCDE"' #PASS
 )
 
 

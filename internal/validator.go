@@ -47,10 +47,7 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 		return false
 	}
 	sections := strings.SplitN(RemoveFirstAndLastChar(encodedSection), " ", 2)
-	if len(sections[1]) < 1 {
-		return false
-	}
-	return true
+	return len(sections[1]) < 1
 }
 
 // Checks to see if the second char is a space

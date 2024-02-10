@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"fmt"
 	"strconv"
 
 	"gitea.kood.tech/hannessoosaar/art/constants"
@@ -38,11 +37,15 @@ func EncodeInput(inputString string) (encodedString string) {
 	} else {
 		tempString += "[" + strconv.Itoa(charCount) + " " + string(lastChar) + "]"
 	}
-	fmt.Println(tempString)
+	// fmt.Println(tempString)
 	return tempString
 }
 
 func EncodeFile(filePath string) (encodedFile []string) {
-
+	fileContent := internal.GetFileContent(internal.OpenFile(filePath))
+	for _, content := range fileContent {
+		encodedOutput := EncodeInput(content)
+		encodedFile = append(encodedFile, encodedOutput+"\n")
+	}
 	return encodedFile
 }

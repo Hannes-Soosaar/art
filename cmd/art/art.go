@@ -19,13 +19,13 @@ func initializeAndRun(inputArgs []string) {
 	} else if len(inputArgs) == 2 {
 		internal.DisplayDecodedSingle(utils.DecodeInput(inputArgs[1]))
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-e" {
-		utils.EncodeInput(inputArgs[2])
+		internal.DisplayEncodedSingle(utils.EncodeInput(inputArgs[2]))
 	} else if len(inputArgs) == 3 && inputArgs[1] == "-m" {
 		internal.DisplayDecodedFile(utils.DecodeFile(inputArgs[2]))
 	} else if len(inputArgs) == 4 && inputArgs[1] == "-m" && inputArgs[2] == "-e" {
-		//TODO add functionality to encode a file
+		internal.DisplayEncodedFile(utils.EncodeFile(inputArgs[3]))
 	} else {
-		//make a internal parser for this
+		//! why do I need this?
 		inputString := ""
 		for i, args := range inputArgs {
 			if i > 0 {

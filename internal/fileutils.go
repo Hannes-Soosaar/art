@@ -10,7 +10,7 @@ import (
 func OpenFile(filePath string) *os.File {
 	file, err := os.Open(filePath)
 	if err != nil {
-		errors.ErrReadingFile() // TODO: error opening file
+		errors.ErrOpeningFile()
 		panic(err)
 	}
 	return file
@@ -31,5 +31,5 @@ func GetFileContent(file *os.File) (fileContent []string) {
 }
 
 func CreateFile(fileContent []string) {
-
+	//TODO: add if time permits
 }
