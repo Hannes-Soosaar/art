@@ -30,6 +30,9 @@ func ErrInvalidInput() {
 	fmt.Println(constants.HELP)
 }
 
-func ErrOpeningFile(){
+func ErrOpeningFile() {
 	fmt.Println(constants.ERR_OPENING_FILE)
+}
+func ErrEncodingCharacter() {
+	fmt.Println(constants.ERR_ENCODING_CHAR)
 }

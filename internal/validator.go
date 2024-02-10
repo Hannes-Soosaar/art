@@ -102,3 +102,12 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 	}
 	return true
 }
+
+func ValidateEncodingInput(inputToAnalyze string) (isValidInput bool) {
+	for _, char := range inputToAnalyze {
+		if char == '[' || char == ']' {
+			return false
+		}
+	}
+	return true
+}

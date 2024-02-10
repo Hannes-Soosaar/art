@@ -3,10 +3,18 @@ package utils
 import (
 	"fmt"
 	"strconv"
+
+	"gitea.kood.tech/hannessoosaar/art/constants"
+	"gitea.kood.tech/hannessoosaar/art/errors"
+	"gitea.kood.tech/hannessoosaar/art/internal"
 )
 
 // perhaps it would be good to use a setter
 func EncodeInput(inputString string) (encodedString string) {
+	if !internal.ValidateEncodingInput(inputString) {
+		errors.ErrEncodingCharacter()
+		return constants.ERR_ENCODING_CHAR
+	}
 	var (
 		lastChar   rune
 		tempString string
@@ -34,8 +42,7 @@ func EncodeInput(inputString string) (encodedString string) {
 	return tempString
 }
 
-func EncodeFile(filePath string)(encodedFile []string){
+func EncodeFile(filePath string) (encodedFile []string) {
 
-	
-return encodedFile
+	return encodedFile
 }

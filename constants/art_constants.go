@@ -9,4 +9,5 @@ var (
 	ERR_ARG_NO_SECOND_ARG = "Error: \n There is no second argument"
 	ERR_ARG_UNBALANCED    = "Error: \n Square brackets are unbalanced"
 	ERR_OPENING_FILE      = "Error: \n file does not exist or the path is wrong"
+	ERR_ENCODING_CHAR     = "Error: \n  can not encode input with '[' or ']' "
 )

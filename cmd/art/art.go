@@ -18,14 +18,12 @@ func initializeAndRun(inputArgs []string) {
 		fmt.Println(constants.HELP)
 	} else if len(inputArgs) == 2 {
 		internal.DisplayDecodedSingle(utils.DecodeInput(inputArgs[1]))
-	} else if len(inputArgs) == 3 && inputArgs[1] == "-encode" {
-		fmt.Println("encode")
+	} else if len(inputArgs) == 3 && inputArgs[1] == "-e" {
 		utils.EncodeInput(inputArgs[2])
-	} else if len(inputArgs) == 3 && inputArgs[1] == "-multi" {
+	} else if len(inputArgs) == 3 && inputArgs[1] == "-m" {
 		internal.DisplayDecodedFile(utils.DecodeFile(inputArgs[2]))
-	} else if len(inputArgs) == 4 && inputArgs[1] == "-multi" && inputArgs[2] == "-encode" {
+	} else if len(inputArgs) == 4 && inputArgs[1] == "-m" && inputArgs[2] == "-e" {
 		//TODO add functionality to encode a file
-		fmt.Println("encode a file")
 	} else {
 		//make a internal parser for this
 		inputString := ""
