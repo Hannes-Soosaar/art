@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+
+	"gitea.kood.tech/hannessoosaar/art/pkg/art"
 )
 
 type PageData struct {
@@ -25,6 +27,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func submitHandler(w http.ResponseWriter, r *http.Request) {
 	textInput := r.FormValue("textInput")
+	systemInput := []string{"placeHolder", "-e", textInput}
+	art.InitializeAndRun(systemInput)
 	data := PageData{
 		SubmittedText: textInput,
 	}
@@ -39,14 +43,13 @@ func submitHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 }
 
 func main() {
 	http.Handle("/static", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/decoder", submitHandler)
-	fmt.Println("Server listening on :8080...")
+	fmt.Println("Server listening on :8081...")
 	err := http.ListenAndServe(":8081", nil)
 	if err != nil {
 		fmt.Println("Error:", err)
