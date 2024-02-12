@@ -4,57 +4,53 @@ if command -v go &> /dev/null
 
 then 
 rm ./log/log.txt
+rm ./assets/output/encoded/*.txt
+rm ./assets/output/decoded/*.txt
 # Array of arguments the number of arguments is the number of times the programm will be launced
 arguments=(
-    # "-h" #PASS
-    # "-e" # PASS  it will try do decode -e if no second arg
-    # "-m assets/input/encoded/cats.encoded.txt" #PASS
-    # "-m assets/input/encoded/kood.encoded.txt" #PASS
-    # "-m assets/input/encoded/lion.encoded.txt" #PASS
-    # "-m assets/input/encoded/plane.encoded.txt" #PASS
-    "-m -e assets/input/decoded/cats.art.txt"
-    "-m -e assets/input/decoded/kood.art.txt"
-    "-m -e assets/input/decoded/lion.art.txt"
-    "-m -e assets/input/decoded/plane.txt"
-
-#     -e "[45 ][334]"
-#     "-m -e filetoencode.txt " #FAIL
-#     "random text to see if it will triger help"  #FAIL // Check for max amount of chars
-#     -e "[45 ][334]"  # test encode // FAIL  // Bug it will still do the same validation for encoding ?
+    "-h" #PASS
+    "-e" # PASS  it will try do decode -e if no second arg
+    "-m assets/input/encoded/cats.encoded.txt" #PASS
+    "-m assets/input/encoded/kood.encoded.txt" #PASS
+    "-m assets/input/encoded/lion.encoded.txt" #PASS
+    "-m assets/input/encoded/plane.encoded.txt" #PASS 
+    "-m -e assets/input/decoded/cats.art.txt"  #PASS
+    "-m -e assets/input/decoded/kood.art.txt"  #PASS
+    "-m -e assets/input/decoded/lion.art.txt"  #PASS
+    "-m -e assets/input/decoded/plane.txt"     #PASS    
+    "-m -e filetoencode.txt " #PASS -fail file does not exist
 )
 
 sl_arguments=(
-    # "[5 #][5 -_]-[5 #]" # PASS
-    # "ABC[10 D]EFG" # PASS
-    # "asd][5 s][gf]" #false unbalance brackets //PASS
-    # '"[a df]fd23545[afd3253]"'   #false first arg not a number 
-    # "[15 #]       [5 -_] - f d [5 #]"   #PASS
-    # "[19 D]"   #PASS
-    #  '"[2    d"'   #false unbalanced #PASS
-    # "[2 ]"   #false second arg a missing      // PASS 
-    # "[3  ]"   #PASS 
-    # '"[2d]"'   #false second nospace // PASS 
-    # "[[[[]]]]"  #balance but error 1) not a numebr 2) no space // PASS 
-    # '"[2 3][3 4 3]3     423   423"' #true // PASS
+    "[5 #][5 -_]-[5 #]" #PASS
+    "ABC[10 D]EFG" # PASS
+    "asd][5 s][gf]" #PASS- fail unabalance
+    '"[a df]fd23545[afd3253]"'   #PASS- fail not a num 
+    "[15 #]       [5 -_] - f d [5 #]"   #PASS
+    "[19 D]"   #PASS
+     '"[2    d"'   #PASS- unbalanced
+    "[2 ]"   #PASS - fail  nosecond arg
+    "[3  ]"   #PASS - happy
+    # '"[2d]"'   #PASS- fail no space 
+    "[[[[]]]]"  #PASS-fail 1) not a numebr 2) no space 
+    '"[2 3][3 4 3]3     423   423"'  #PASS- happy  
 )
 
 vect_arguments=(
-    '-e ""'
-    # '-e "abcdefghijklmn op galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    # '-e "[][[[[[]][][[]]]]]"'  # fail case // FAIL  // Bug it will still do the same validation for encoding 
-    # '-e "abcdefghijklmn op dddfdfff  222222222222221 ***-*-*-*-**-*-************galskdfj sdfa"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    # '-e "| | | | | | | | | | | | |\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    # '-e "   _\/\\\////\\\____/\\\///\\\____/\\\///\\\____/\\\\\\\\\__"'  # test encode // FAIL  // Bug it will still do the same validation for encoding 
-    # '-e "--15454111115445454AAAAAAAAAAAABBBBBBBBBBBCCCCDE"' #PASS
+    '-e ""'   #PASS -happy
+    '-e "abcdefghijklmn op galskdfj sdfa"'  # PASS-happy
+    '-e "[][[[[[]][][[]]]]]"'  # PASS-fail  
+    '-e "abcdefghijklmn op dddfdfff  222222222222221 ***-*-*-*-**-*-************galskdfj sdfa"'  # PASS- happy 
+    '-e "| | | | | | | | | | | | |\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |"'  # PASS -happy 
+    '-e "   _\/\\\////\\\____/\\\///\\\____/\\\///\\\____/\\\\\\\\\__"'  # PASS -happy
+    '-e "--15454111115445454AAAAAAAAAAAABBBBBBBBBBBCCCCDE"' #PASS -happy
 )
 
 
 # if the script is in the same folder, as the main go programm input "." 
 program_path="./cmd/art/"
-
 # Output file path and file name
 output_file="./log/log.txt"
-
 
 # ANSI escape code for red text
 RED='\033[91m'

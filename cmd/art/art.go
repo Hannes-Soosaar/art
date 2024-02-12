@@ -25,13 +25,6 @@ func initializeAndRun(inputArgs []string) {
 	} else if len(inputArgs) == 4 && inputArgs[1] == "-m" && inputArgs[2] == "-e" {
 		internal.DisplayEncodedFile(utils.EncodeFile(inputArgs[3]))
 	} else {
-		//! why do I need this?
-		inputString := ""
-		for i, args := range inputArgs {
-			if i > 0 {
-				inputString += args + " "
-			}
-		}
-		utils.DecodeInput(inputString)
+		fmt.Println(constants.HELP)
 	}
 }

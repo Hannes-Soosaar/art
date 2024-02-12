@@ -47,7 +47,7 @@ func hasSecondArg(encodedSection string) (hasSecondArg bool) {
 		return false
 	}
 	sections := strings.SplitN(RemoveFirstAndLastChar(encodedSection), " ", 2)
-	return len(sections[1]) < 1
+	return len(sections) > 1
 }
 
 // Checks to see if the second char is a space
@@ -103,6 +103,7 @@ func ValidateInput(inputToAnalyze string) (validInput bool) {
 func ValidateEncodingInput(inputToAnalyze string) (isValidInput bool) {
 	for _, char := range inputToAnalyze {
 		if char == '[' || char == ']' {
+			errors.ErrEncodingCharacter()
 			return false
 		}
 	}
