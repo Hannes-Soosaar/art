@@ -8,7 +8,7 @@ import (
 
 	"gitea.kood.tech/hannessoosaar/art/errors"
 )
-
+// Opens a file and returns the  file object
 func OpenFile(filePath string) *os.File {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -17,7 +17,7 @@ func OpenFile(filePath string) *os.File {
 	}
 	return file
 }
-
+// Reads the content of a file and returns the file as a slice of string
 func GetFileContent(file *os.File) (fileContent []string) {
 	defer file.Close()
 	var scanner = bufio.NewScanner(file)
@@ -29,6 +29,7 @@ func GetFileContent(file *os.File) (fileContent []string) {
 		errors.ErrReadingFile()
 		return nil
 	}
+	file.Close()
 	return fileContent
 }
 
@@ -49,8 +50,8 @@ func CreateEncodedFile(fileContent []string, filePath string) {
 	}
 }
 func CreateDecodedFile(fileContent []string, filePath string) {
-	fileName := strings.Split(filePath, "/") 
-	writePath := fileName[len(fileName)-1]   
+	fileName := strings.Split(filePath, "/")
+	writePath := fileName[len(fileName)-1]
 	writePath = "./assets/output/decoded/decoded_" + writePath
 	file, err := os.Create(writePath)
 	if err != nil {

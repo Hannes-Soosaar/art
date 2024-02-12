@@ -1,4 +1,3 @@
-
 #checks if go is installed
 if command -v go &> /dev/null
 
@@ -28,10 +27,10 @@ sl_arguments=(
     '"[a df]fd23545[afd3253]"'   #PASS- fail not a num 
     "[15 #]       [5 -_] - f d [5 #]"   #PASS
     "[19 D]"   #PASS
-     '"[2    d"'   #PASS- unbalanced
+    '"[2    d"'   #PASS- unbalanced
     "[2 ]"   #PASS - fail  nosecond arg
     "[3  ]"   #PASS - happy
-     '"[2d]"'   #PASS- fail no space 
+    '"[2d]"'   #PASS- fail no space 
     "[[[[]]]]"  #PASS-fail 1) not a numebr 2) no space 
     '"[2 3][3 4 3]3     423   423"'  #PASS- happy  
 )
@@ -64,7 +63,6 @@ RESET='\033[0m'
 #Run a programm so taht there are not spaces in any of the args 
 for args_set in "${arguments[@]}"; do
     args=($arg_set)
- 
     echo -e "${YELLOW}" running: $args_set
     # echo -e "${YELLOW}"running: "${arguments[@]}"
     echo ""

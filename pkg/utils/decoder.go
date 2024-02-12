@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"go/constant"
 	"strconv"
 	"strings"
 
@@ -41,8 +40,8 @@ func DecodeFile(filePath string) (decodedFile []string) {
 		decodedOutput := DecodeInput(content)
 		decodedFile = append(decodedFile, decodedOutput+"\n")
 	}
-	if constants.WRITE_TO_FILE{
-	internal.CreateDecodedFile(decodedFile, filePath)
+	if constants.WRITE_TO_FILE {
+		internal.CreateDecodedFile(decodedFile, filePath)
 	}
 	return decodedFile
 }

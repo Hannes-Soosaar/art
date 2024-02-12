@@ -8,10 +8,6 @@ import (
 	"gitea.kood.tech/hannessoosaar/art/errors"
 )
 
-/*The validator file holds all functions that return a boolean
-with the exception of one getter to make the code more readable
-*/
-
 // Takes in a string and analyzes it to to see if square [] are balanced
 func bracketBalance(inputToAnalyze string) (isBalanced bool) {
 	var (

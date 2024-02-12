@@ -130,6 +130,9 @@ Error:
 
    
 Error: 
+ The arguments are not separated by a space
+
+Error: 
  The first argument is not a number
 
 "334 34 34 33     423   423"

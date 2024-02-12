@@ -20,6 +20,7 @@ func EncodeInput(inputString string) string {
 	return ""
 }
 
+// Encodes a single line of input
 func SingleLineEncoder(inputString string, numOfLet int) string {
 	finalStr := ""
 	var checkLastInd int
@@ -65,7 +66,7 @@ func EncodeFile(filePath string) (encodedFile []string) {
 		encodedFile = append(encodedFile, encodedOutput+"\n")
 	}
 	if constants.WRITE_TO_FILE {
-	internal.CreateEncodedFile(encodedFile, filePath)
+		internal.CreateEncodedFile(encodedFile, filePath)
 	}
 	return encodedFile
 }
