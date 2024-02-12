@@ -31,7 +31,7 @@ sl_arguments=(
      '"[2    d"'   #PASS- unbalanced
     "[2 ]"   #PASS - fail  nosecond arg
     "[3  ]"   #PASS - happy
-    # '"[2d]"'   #PASS- fail no space 
+     '"[2d]"'   #PASS- fail no space 
     "[[[[]]]]"  #PASS-fail 1) not a numebr 2) no space 
     '"[2 3][3 4 3]3     423   423"'  #PASS- happy  
 )

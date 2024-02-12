@@ -1,9 +1,11 @@
 package utils
 
 import (
+	"go/constant"
 	"strconv"
 	"strings"
 
+	"gitea.kood.tech/hannessoosaar/art/constants"
 	"gitea.kood.tech/hannessoosaar/art/internal"
 )
 
@@ -39,7 +41,9 @@ func DecodeFile(filePath string) (decodedFile []string) {
 		decodedOutput := DecodeInput(content)
 		decodedFile = append(decodedFile, decodedOutput+"\n")
 	}
+	if constants.WRITE_TO_FILE{
 	internal.CreateDecodedFile(decodedFile, filePath)
+	}
 	return decodedFile
 }
 
