@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+<title>Art Decoder/Encoder </title>
+</head>
+<body>
+<h1>first page!</h1>
+<p> the arts decoder encoder front end will come here</p>
+<form action="/decoder" method="post">
+    <label for="enterTextToDecode">Enter Text:</label>
+    <input type="text" id="textInput" name="textInput" required>
+    <button type="decoder">Generate</button>
+</form>
+<p>Submitted Text: {{.SubmittedText}} </p>
+</body>
+</html>
+
