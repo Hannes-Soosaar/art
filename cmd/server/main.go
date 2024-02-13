@@ -32,7 +32,6 @@ func submitHandler(w http.ResponseWriter, r *http.Request) {
 	data := PageData{
 		SubmittedText: textInput,
 	}
-
 	pageHtml, err := template.ParseFiles("template/index.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -49,8 +48,8 @@ func main() {
 	http.Handle("/static", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/decoder", submitHandler)
-	fmt.Println("Server listening on :8081...")
-	err := http.ListenAndServe(":8081", nil)
+	fmt.Printf("Server listening on :%s\n", ServerPort)
+	err := http.ListenAndServe(ServerPort, nil)
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
