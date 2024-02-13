@@ -4,7 +4,7 @@ Art Decoder is a CLI tool to decode and encode ASCI art by compressing repeating
 
 ## Starting The App
  
-The main file is located in the cmd/art directory where you can use the "go run ." command to start the app 
+The main file is located in the cmd/art directory where you can use the "go run ." command to start the app. 
 
  $ projectDirectory/cmd/art/ go run . -arg1 -arg2 -arg3
 
