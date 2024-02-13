@@ -1,3 +1,30 @@
 Server listening on ::8081
-xvgvzdf
-dasfa
+-e
+asdfa
+Response [-e asdfa]
+-d
+asdgag
+Response [-d asdgag]
+-e
+[22  ]/^--^\     /^--^\     /^--^\
+Response [-e [22  ]/^--^\     /^--^\     /^--^\]
+Error: 
+  can not encode input with '[' or ']' 
+-d
+[22  ]/^--^\     /^--^\     /^--^\
+Response [-d [22  ]/^--^\     /^--^\     /^--^\]
+-e
+aaaaaaaaaaaadddddddd
+Response [-e aaaaaaaaaaaadddddddd]
+-d
+[12 a][8 d]
+Response [-d [12 a][8 d]]
+
+aaaaaaaaaaaadddddddd
+Response [ aaaaaaaaaaaadddddddd]
+-e
+aaaaaaaaaaaadddddddd
+Response [-e aaaaaaaaaaaadddddddd]
+-d
+[12 a][8 d]
+Response [-d [12 a][8 d]]

@@ -1,5 +1,6 @@
 package models
 
-type PageData struct{
+type PageData struct {
+	Options       string
 	SubmittedText string
 }
