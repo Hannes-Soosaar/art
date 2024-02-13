@@ -2,54 +2,18 @@ package main
 
 import (
 	"fmt"
-	"html/template"
 	"net/http"
 
-	"gitea.kood.tech/hannessoosaar/art/pkg/art"
+	"gitea.kood.tech/hannessoosaar/art/conf"
+	"gitea.kood.tech/hannessoosaar/art/pkg/handle"
 )
 
-type PageData struct {
-	SubmittedText string
-}
-
-func handler(w http.ResponseWriter, r *http.Request) {
-	pageHtml, err := template.ParseFiles("template/index.html")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	err = pageHtml.Execute(w, nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-}
-
-func submitHandler(w http.ResponseWriter, r *http.Request) {
-	textInput := r.FormValue("textInput")
-	systemInput := []string{"placeHolder", "-e", textInput}
-	art.InitializeAndRun(systemInput)
-	data := PageData{
-		SubmittedText: textInput,
-	}
-	pageHtml, err := template.ParseFiles("template/index.html")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	err = pageHtml.Execute(w, data)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-}
-
 func main() {
-	http.Handle("/static", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
-	http.HandleFunc("/", handler)
-	http.HandleFunc("/decoder", submitHandler)
-	fmt.Printf("Server listening on :%s\n", ServerPort)
-	err := http.ListenAndServe(ServerPort, nil)
+	http.Handle("/static", http.StripPrefix("/static/", http.FileServer(http.Dir("static")))) // sets the static folder for css
+	http.HandleFunc("/", handle.Handler)
+	http.HandleFunc("/decoder", handle.SubmitHandler)
+	fmt.Printf("Server listening on :%s\n", conf.ServerPort)
+	err := http.ListenAndServe(conf.ServerPort, nil)
 	if err != nil {
 		fmt.Println("Error:", err)
 	}

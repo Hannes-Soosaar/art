@@ -1,5 +1,3 @@
-Server listening on :8081...
-Error: 
-  can not encode input with '[' or ']' 
-
-[5 a][5 d][4 e][3 f]e
+Server listening on ::8081
+xvgvzdf
+dasfa
