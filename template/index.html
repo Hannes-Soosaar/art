@@ -9,7 +9,7 @@
 <body>
 <h1>first page!</h1>
 <p>Single Line encoder</p>
-<form action="http://localhost:8081/decoder" method="POST">
+<form action="http://localhost:8081/decoder" method="POST" enctype="application/x-www-form-urlencoded">
     <label>
     <input type="radio" name="options" value="-d">Decode</button>
     </label><br>
@@ -20,17 +20,26 @@
     <input type="text" id="textInput" name="textInput" required>
     <button type="decoder">Encode</button>
 </form>
-<h3>Multiline Decoder</h3>
-<form action="http://localhost:8081/decoder" method="POST">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" required>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <button type="submit">Decode</button>
+<p>Multiline Decoder</p>
+<form action="http://localhost:8081/multi" method="POST" enctype="multipart/form-data">
+    <label>    
+    <input type="radio" name="options" value="-d">Decode</button>
+    </label>
+    <br>
+    <label> 
+    <input type="radio" name="options" value="-e">Encode</button>
+    </label>
+    <br>
+    <label for="file">Select a txt file to upload:</label>
+    <input type="file" id="file" name="file" accept=".txt">
+    <br>
+    <button type="submit">Upload</button>
 </form>
+
 <p>Encoded : {{.EncodedText}} </p>
 <p>Decoded : {{.DecodedText}} </p>
 <p>Status : {{.Status}} </p>
+<pre>{{.FileContent}}</pre>
 </body>
 </html>
 

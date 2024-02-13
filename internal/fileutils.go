@@ -31,7 +31,6 @@ func GetFileContent(file *os.File) (fileContent []string) {
 		errors.ErrReadingFile()
 		return nil
 	}
-	file.Close()
 	return fileContent
 }
 

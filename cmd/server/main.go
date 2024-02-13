@@ -14,6 +14,7 @@ func main() {
 	http.HandleFunc("/decoder", handle.PostEncoded)
 	http.HandleFunc("/encoder", handle.PostEncoded)
 	http.HandleFunc("/reload", handle.LoadIndex)
+	http.HandleFunc("/multi", handle.PostMulti)
 	fmt.Printf("Server listening on :%s\n", conf.ServerPort)
 	err := http.ListenAndServe(conf.ServerPort, nil)
 	if err != nil {
