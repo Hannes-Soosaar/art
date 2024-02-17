@@ -63,11 +63,11 @@ func PostMulti(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Error reading file content", http.StatusInternalServerError)
 		}
 		lines := strings.Split(string(content), "\n")
-		fileData.FileContent = lines
+
 		for _, line := range lines {
-			fmt.Println(line)
+			fileData.FileContent = append(fileData.FileContent, line)
 		}
-		fmt.Fprintf(w, "File uploaded successfully")
+		w.Header().Set("Content-Type", "html")
 	}
 
 	pageHtml, err := template.ParseFiles("template/index.html")
@@ -76,7 +76,6 @@ func PostMulti(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(fileData.FileContent)
 	err = pageHtml.Execute(w, fileData)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

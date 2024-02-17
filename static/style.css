@@ -10,3 +10,17 @@ p{
 color: gray;
 background-color: yellow;
 }
+
+table {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+td,th {
+    padding: 10px;
+}
+tr:hover {
+    background-color: blueviolet;
+}
