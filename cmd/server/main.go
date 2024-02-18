@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	http.Handle("/static", http.StripPrefix("/static/", http.FileServer(http.Dir("/static/style.css")))) // sets the static folder for css
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handle.LoadIndex)
 	http.HandleFunc("/decoder", handle.PostEncoded)
 	http.HandleFunc("/encoder", handle.PostEncoded)

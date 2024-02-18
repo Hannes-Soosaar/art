@@ -5,7 +5,6 @@ import (
 	"net/http"
 )
 
-// GET method to load the index page
 func LoadIndex(w http.ResponseWriter, r *http.Request) {
 	pageHtml, err := template.ParseFiles("template/index.html")
 	if err != nil {
