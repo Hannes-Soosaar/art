@@ -1,3 +1,5 @@
 Server listening on ::8081
--d
-vfzsdfgsdghdfsa
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -dRunning router in : -d mode  and 

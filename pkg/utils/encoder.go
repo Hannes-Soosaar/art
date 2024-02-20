@@ -70,3 +70,10 @@ func EncodeFile(filePath string) (encodedFile []string) {
 	}
 	return encodedFile
 }
+func EncodeFileContent(fileContent []string) (encodedFile []string) {
+	for _, content := range fileContent {
+		encodedOutput := EncodeInput(content)
+		encodedFile = append(encodedFile, encodedOutput+"\n")
+	}
+	return encodedFile
+}

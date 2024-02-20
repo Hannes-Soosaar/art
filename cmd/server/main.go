@@ -11,8 +11,8 @@ import (
 func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handle.LoadIndex)
-	http.HandleFunc("/decoder", handle.PostEncoded)
-	http.HandleFunc("/encoder", handle.PostEncoded)
+	http.HandleFunc("/decoder", handle.PostSingle)
+	http.HandleFunc("/encoder", handle.PostSingle)
 	http.HandleFunc("/reload", handle.LoadIndex)
 	http.HandleFunc("/multi", handle.PostMulti)
 	fmt.Printf("Server listening on :%s\n", conf.ServerPort)

@@ -26,10 +26,7 @@ func InitializeAndRun(inputArgs []string) {
 }
 
 func RunWebArtSingleLine(inputArgs []string) (responseData models.ResponseBody) {
-	if len(inputArgs) == 1 && inputArgs[0] == "-h" {
-		responseData.Status = constants.HELP
-		return responseData
-	} else if len(inputArgs) == 2 && inputArgs[0] == "-d" {
+	if len(inputArgs) == 2 && inputArgs[0] == "-d" {
 		responseData.DecodedText = utils.DecodeInput(inputArgs[1])
 		if responseData.DecodedText != "" {
 			responseData.Status = "OK"
@@ -50,19 +47,24 @@ func RunWebArtSingleLine(inputArgs []string) (responseData models.ResponseBody) 
 	return responseData
 }
 
-func RunWebArtMultiLine(inputArgs []string) (singleLine string, MultiLine []string) {
-	// TODO Modify function to return a st
-	if len(inputArgs) == 1 && inputArgs[0] == "-h" {
-		return constants.HELP, nil
-	} else if len(inputArgs) == 1 {
-		return utils.DecodeInput(inputArgs[0]), nil
-	} else if len(inputArgs) == 2 && inputArgs[0] == "-e" {
-		return utils.EncodeInput(inputArgs[1]), nil
-	} else if len(inputArgs) == 3 && inputArgs[1] == "-m" {
-		return "", utils.DecodeFile(inputArgs[2])
-	} else if len(inputArgs) == 4 && inputArgs[1] == "-m" && inputArgs[2] == "-e" {
-		return "", utils.DecodeFile(inputArgs[2])
-	} else {
-		return constants.HELP, nil
+func RunWebArtMultiLine(option string, fileContent []string) (responseData models.ResponseBody) {
+	fmt.Printf("Running router in : %s mode  and \n", option)
+	if fileContent == nil {
+		responseData.Status = "No file added"
+		return responseData
 	}
+	if option == "" {
+		responseData.Status = "No operation selected"
+		return responseData
+	}
+	if option == "-d" {
+		responseData.Status = "OK Decode"
+		responseData.FileContent = utils.DecodeFileContent(fileContent)
+	} else if option == "-e" {
+		responseData.Status = "OK Encode"
+		responseData.FileContent = utils.EncodeFileContent(fileContent)
+	} else {
+		responseData.Status = "NOK"
+	}
+	return responseData
 }
