@@ -8,7 +8,6 @@ h1{
 }
 p{
 color: gray;
-background-color: yellow;
 }
 
 table {
@@ -23,4 +22,14 @@ td,th {
 }
 tr:hover {
     background-color: blueviolet;
+}
+
+.response-window{
+    display: block;
+}
+.response-singleLine{
+    display: none;
+}
+.response-multiLine{
+    display: none;
 }

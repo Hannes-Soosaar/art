@@ -7,22 +7,11 @@
 <title>Art Decoder/Encoder </title>
 </head>
 <body>
-<h1>first page!</h1>
-<table>
-<tr >
-<td>R1col1</td>    
-<td>R1col2</td>    
-<td>R1col3</td>    
-</tr>
-<tr>
-<td>R2col1</td>    
-<td>R2col2</td>    
-<td>R2col3</td>    
-</tr>
+<h1>ANSI art Decoder Encoder</h1>
 
 </table>
 <p>Single Line encoder</p>
-<form action="http://localhost:8081/decoder" method="POST" enctype="application/x-www-form-urlencoded">
+<form id="submitSingleLineForm" action="http://localhost:8081/decoder" method="POST" enctype="application/x-www-form-urlencoded">
     <label>
     <input type="radio" name="options" value="-d">Decode</button>
     </label><br>
@@ -31,10 +20,10 @@
     </label> <br>
     <label for="enterTextToDecode">Enter Text:</label>
     <input type="text" id="textInput" name="textInput" required>
-    <button type="decoder">Encode</button>
+    <button type="decoder" >Encode/Decode</button>
 </form>
 <p>Multiline Decoder</p>
-<form action="http://localhost:8081/multi" method="POST" enctype="multipart/form-data">
+<form id="multiLineForm" action="http://localhost:8081/multi" method="POST" enctype="multipart/form-data">
     <label>    
     <input type="radio" name="options" value="-d">Decode</button>
     </label>
@@ -46,13 +35,50 @@
     <label for="file">Select a txt file to upload:</label>
     <input type="file" id="file" name="file" accept=".txt">
     <br>
-    <button type="submit">Upload</button>
+    <button type="submit" >Upload</button>
 </form>
+<div class="response-window" id="responseContainer">
+    <div class="response-singleLine" id="singleLineResponse">
+      <p>Encoded : {{.EncodedText}} </p>
+      <p>Decoded : {{.DecodedText}} </p>
+      <p>Status : <span id="singleLineStatus">{{.Status}}</span></p>
+    </div>
+  
+    <div class="response-multiLine" id="multiLineResponse">
+        <p>Status : <span id="multiLineStatus">{{.Status}}</span></p>
+      <pre>{{.FileContent}}</pre>
+    </div>
+  </div>
 
-<p>Encoded : {{.EncodedText}} </p>
-<p>Decoded : {{.DecodedText}} </p>
-<p>Status : {{.Status}} </p>
-<pre>{{.FileContent}}</pre>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check the initial content and show the corresponding response container
+        var singleLineStatus = "{{.Status}}"; // Replace with the actual value from your server
+        var multiLineStatus = "{{.Status}}";  // Replace with the actual value from your server
+
+        if (singleLineStatus !== '') {
+            toggleView('singleLineResponse');
+            document.getElementById('singleLineStatus').textContent = singleLineStatus;
+        } else if (multiLineStatus !== '') {
+            toggleView('multiLineResponse');
+            document.getElementById('multiLineStatus').textContent = multiLineStatus;
+        }
+    });
+
+    function toggleView(viewId) {
+        // Hide all response containers
+        var responseContainers = document.querySelectorAll('.response-container');
+        responseContainers.forEach(function(container) {
+            container.style.display = 'none';
+        });
+
+        // Show the selected response container
+        var selectedContainer = document.getElementById(viewId);
+        if (selectedContainer) {
+            selectedContainer.style.display = 'block';
+        }
+    }
+</script>
 </body>
 </html>
 
