@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+<title>Art Decoder/Encoder </title>
+</head>
+<body>
+
+<table>
+<tr>
+    <td><h1>ANSI Art Decoder/Encoder</h1></td>
+</tr>
+
+<tr>
+    <td>
+        <div class=" element_with_padding"></div>
+        <h3>Single Line encoder</h3>
+    </div>
+            <form id="submitSingleLineForm" action="http://localhost:8081/decoder" method="POST" enctype="application/x-www-form-urlencoded">
+                <div class=" element_with_padding">
+                <label class="yellow_text">
+                <input  type="radio" name="options" value="-d" checked>Decode</button>
+                </label>
+                <label class="yellow_text"> 
+                <input type="radio" name="options" value="-e">Encode</button>
+                </label> 
+            </div>
+            <div class=" element_with_padding">
+                <label class="grey_text"  for="enterTextToDecode">Enter Text:</label>
+                <input type="text" id="textInput" name="textInput" required>
+                <button type="decoder" >submit</button>
+            </div>  
+            </form> 
+        </td>
+</tr>
+
+<tr>       
+    <td>
+        <div class=" element_with_padding">
+        <h3>Multiline Decoder</h3>
+        </div>
+        <form id="multiLineForm" action="http://localhost:8081/multi" method="POST" enctype="multipart/form-data">
+        <div class="element_with_padding">
+            <label class="yellow_text">    
+            <input type="radio" name="options" value="-d" checked >Decode</button>
+            </label>
+            <label class="yellow_text"> 
+            <input type="radio" name="options" value="-e">Encode</button>
+            </label>
+        </div>  
+        <div class="element_with_padding" >
+            <input type="file" id="file" name="file" accept=".txt" required >
+            <button type="submit" >submit</button>
+        </div> 
+        </form>
+    </td>
+</tr>  
+
+<tr>
+    <td class="td_result">    
+        <div class="yellow_text" id="responseContainer">
+            <div class="response-singleLine" id="singleLineResponse">
+                <p class="yellow_text">{{.EncodedText}}</p>
+                <p class="yellow_text">{{.DecodedText}}</p>
+            </div>
+    </td>
+</tr>
+
+<tr>
+    <td class="td_result">
+        <div class="response-multiLine" id="multiLineResponse">
+            <pre class="yellow_text">{{.FileContent}}</pre>
+            </div>
+    </td>
+</tr>
+
+
+</table>
+</body>
+</html>

@@ -46,6 +46,14 @@ func DecodeFile(filePath string) (decodedFile []string) {
 	return decodedFile
 }
 
+func DecodeFileContent (fileContent []string) (decodedFile []string) {
+	for _, content := range fileContent {
+		decodedOutput := DecodeInput(content)
+		decodedFile = append(decodedFile, decodedOutput+"\n")
+	}
+	return decodedFile
+}
+
 func decodeSection(cleanSection string) (decodedSection string) {
 	sections := strings.SplitN(cleanSection, " ", 2)
 	multiplier, _ := strconv.Atoi(string(sections[0]))

@@ -8,6 +8,7 @@ import (
 
 	"gitea.kood.tech/hannessoosaar/art/errors"
 )
+
 // Opens a file and returns the  file object
 func OpenFile(filePath string) *os.File {
 	file, err := os.Open(filePath)
@@ -17,6 +18,7 @@ func OpenFile(filePath string) *os.File {
 	}
 	return file
 }
+
 // Reads the content of a file and returns the file as a slice of string
 func GetFileContent(file *os.File) (fileContent []string) {
 	defer file.Close()
@@ -29,7 +31,6 @@ func GetFileContent(file *os.File) (fileContent []string) {
 		errors.ErrReadingFile()
 		return nil
 	}
-	file.Close()
 	return fileContent
 }
 

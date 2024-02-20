@@ -2,9 +2,10 @@
 if command -v go &> /dev/null
 
 then 
-rm ./log/log.txt
-rm ./assets/output/encoded/*.txt
-rm ./assets/output/decoded/*.txt
+echo "running ART script"
+# rm ./log/log.txt
+# rm ./assets/output/encoded/*.txt
+# rm ./assets/output/decoded/*.txt
 # Array of arguments the number of arguments is the number of times the programm will be launced
 arguments=(
     "-h" #PASS
@@ -89,7 +90,7 @@ for args in "${sl_arguments[@]}"; do
     echo ""
     echo -e "${GREEN}--------START--------${BLUE}"
     go run "$program_path" "$args" | tee -a "$output_file" 
-    echo -e "${RED}-------END----------${REST}"
+    echo -e "${RED}-------END----------${BLUE}"
     echo ""
 done
 
