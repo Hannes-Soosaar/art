@@ -20,7 +20,6 @@ func EncodeInput(inputString string) string {
 	return ""
 }
 
-// Encodes a single line of input
 func SingleLineEncoder(inputString string, numOfLet int) string {
 	finalStr := ""
 	var checkLastInd int
@@ -44,7 +43,6 @@ func SingleLineEncoder(inputString string, numOfLet int) string {
 	return finalStr
 }
 
-// get repetitive series of substring in a string
 func GetRepPatterns(inputString, subStr string, startInd int) (int, int, string) {
 	pattern := subStr
 	numOfReps := 0
@@ -58,7 +56,6 @@ func GetRepPatterns(inputString, subStr string, startInd int) (int, int, string)
 	return startInd, numOfReps, subStr
 }
 
-// get repetitive series of substring in a string
 func EncodeFile(filePath string) (encodedFile []string) {
 	fileContent := internal.GetFileContent(internal.OpenFile(filePath))
 	for _, content := range fileContent {

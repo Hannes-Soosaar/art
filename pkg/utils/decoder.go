@@ -46,7 +46,7 @@ func DecodeFile(filePath string) (decodedFile []string) {
 	return decodedFile
 }
 
-func DecodeFileContent (fileContent []string) (decodedFile []string) {
+func DecodeFileContent(fileContent []string) (decodedFile []string) {
 	for _, content := range fileContent {
 		decodedOutput := DecodeInput(content)
 		decodedFile = append(decodedFile, decodedOutput+"\n")
