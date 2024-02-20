@@ -72,3 +72,13 @@ Error:
  type of Operations: -eRunning router in : -e mode  and 
 
  type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+Error: 
+  can not encode input with '[' or ']' 
