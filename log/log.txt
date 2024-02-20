@@ -1,5 +1,74 @@
 Server listening on ::8081
 
+ type of Operations: -d
+ type of Operations: -dRunning router in : -d mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+Error: 
+  can not encode input with '[' or ']' 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
  type of Operations: -eRunning router in : -e mode  and 
 
  type of Operations: -dRunning router in : -d mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -d
+ type of Operations: -d
+ type of Operations: -dRunning router in : -d mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 
+
+ type of Operations: -eRunning router in : -e mode  and 

@@ -29,6 +29,13 @@ func PostSingle(w http.ResponseWriter, r *http.Request) {
 	// fmt.Println(data.Options + "\n" + data.SubmittedText)
 	systemInput := []string{data.Options, data.SubmittedText}
 	response := art.RunWebArtSingleLine(systemInput) // starts the decoder App and returns the happy path
+
+	if response.Status == "OK" {
+		w.WriteHeader(http.StatusAccepted) // HTTP 202
+	} else {
+		w.WriteHeader(http.StatusBadRequest) // HTTP 400
+	}
+
 	pageHtml, err := template.ParseFiles("template/index.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -73,6 +80,12 @@ func PostMulti(w http.ResponseWriter, r *http.Request) {
 		}
 		fileData = art.RunWebArtMultiLine(fileData.Options, fileContent)
 		w.Header().Set("Content-Type", "html")
+	}
+
+	if fileData.Status == "OK" {
+		w.WriteHeader(http.StatusAccepted) // HTTP 202
+	} else {
+		w.WriteHeader(http.StatusBadRequest) // HTTP 400
 	}
 	pageHtml, err := template.ParseFiles("template/index.html")
 	if err != nil {

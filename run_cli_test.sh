@@ -61,38 +61,38 @@ YELLOW='\033[93m'
 RESET='\033[0m'
 
 
-# #Run a programm so taht there are not spaces in any of the args 
-# for args_set in "${arguments[@]}"; do
-#     args=($arg_set)
-#     echo -e "${YELLOW}" running: $args_set
-#     # echo -e "${YELLOW}"running: "${arguments[@]}"
-#     echo ""
-#     echo -e "${GREEN}--------START--------${BLUE}"
-#     go run "$program_path" $args_set | tee -a "$output_file" 
-#     echo -e "${RED}-------END----------${REST}"
-#     echo ""
-# done
-# # runs the programm such that the second argument can have spaces 'arg1 "arg 2 with spaces "'
-# for arg_set in "${vect_arguments[@]}"; do
-#     eval "args=($arg_set)"
-#     arg1=${args[0]}
-#     arg2=${args[1]}
-#     echo -e "${YELLOW}"running: "$arg1 \"$arg2\""
-#     echo ""
-#     echo -e "${GREEN}--------START--------${BLUE}"
-#     go run "$program_path" "${args[@]}" | tee -a "$output_file"
-#     echo -e "${RED}-------END----------${REST}"
-#     echo ""
-# done
-# # Run the programm such that it has a single argument that can contain spaces
-# for args in "${sl_arguments[@]}"; do
-#     echo -e "${YELLOW}"running: $args
-#     echo ""
-#     echo -e "${GREEN}--------START--------${BLUE}"
-#     go run "$program_path" "$args" | tee -a "$output_file" 
-#     echo -e "${RED}-------END----------${REST}"
-#     echo ""
-# done
+#Run a programm so taht there are not spaces in any of the args 
+for args_set in "${arguments[@]}"; do
+    args=($arg_set)
+    echo -e "${YELLOW}" running: $args_set
+    # echo -e "${YELLOW}"running: "${arguments[@]}"
+    echo ""
+    echo -e "${GREEN}--------START--------${BLUE}"
+    go run "$program_path" $args_set | tee -a "$output_file" 
+    echo -e "${RED}-------END----------${REST}"
+    echo ""
+done
+# runs the programm such that the second argument can have spaces 'arg1 "arg 2 with spaces "'
+for arg_set in "${vect_arguments[@]}"; do
+    eval "args=($arg_set)"
+    arg1=${args[0]}
+    arg2=${args[1]}
+    echo -e "${YELLOW}"running: "$arg1 \"$arg2\""
+    echo ""
+    echo -e "${GREEN}--------START--------${BLUE}"
+    go run "$program_path" "${args[@]}" | tee -a "$output_file"
+    echo -e "${RED}-------END----------${REST}"
+    echo ""
+done
+# Run the programm such that it has a single argument that can contain spaces
+for args in "${sl_arguments[@]}"; do
+    echo -e "${YELLOW}"running: $args
+    echo ""
+    echo -e "${GREEN}--------START--------${BLUE}"
+    go run "$program_path" "$args" | tee -a "$output_file" 
+    echo -e "${RED}-------END----------${BLUE}"
+    echo ""
+done
 
 else 
 echo "you need to install go, before running the app"

@@ -4,7 +4,6 @@ then
 rm ./log/log.txt
 
 program_path="./cmd/server/"
-
 output_file="./log/log.txt"
 
 echo "starting up the server"
