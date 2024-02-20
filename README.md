@@ -6,7 +6,7 @@ Art Decoder is a CLI tool to decode and encode ASCI art by compressing repeating
 
 The main file is located in the cmd/art directory where you can use the "go run ." command to start the app
 
- $ projectDirectory/cmd/art/ go run . -arg1 -arg2 -arg3
+      $ projectDirectory/cmd/art/ go run . -arg1 -arg2 -arg3
 
 ## Decoding
 
@@ -61,20 +61,24 @@ Art Decoder/Encoder has a web interface to use the web graphical interface you m
 
 ## starting the Web app
 
-To start the web app
+To start the web app you need to be in the the root folder where application is installed next
 
 1) permission needs to be granted to the launcher by running.
 
       **$ chmod +x run_web.sh**
 
 2) starting the server  
-   **$ ./run_web.sh**
+      **$ ./run_web.sh**
 
-  *the server can also be launched directly from the go file. the "main.go" file is located at ~/art/cmd/server/ to start the server run ~/art/cmd/server/$go run .*
+ *the server can also be launched directly from the go file. the "main.go" file is located at ~/art/cmd/server/ to start the server run ~/art/cmd/server/$go run .*
+
+### closing the server
+
+to close the application you must press *"ctrl+C"* in the terminal.
 
 ## accessing the web App
 
- to access the web app open your standard a browser and navigate to  **localhost:8081** on the machine that you started the sever on.
+to access the web app open your standard a browser and navigate to  **localhost:8081** on the machine that you started the sever on.
 
 ### change listening port
 
