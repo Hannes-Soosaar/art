@@ -1,6 +1,6 @@
 package constants
 
-var (
+const (
 	HELP                  = "To use the decoder: \n\n for help\n $go run . -h \n\n Decode a single line run: \n $go run . \"string to decode\" \n\n Decode multiple lines run:\n $go run . -m path/to/my/file/myFileToDecode.txt \n\n Encode a single line run: \n $go run . -e \"string to encode\" \n\n Encode multiple line run: \n $go run . -m  -e path/to/my/file/myFileToEncode.txt\n"
 	ERR_READING_FILE      = "Error: \n reading file"
 	ERR_WRITING_FILE      = "Error: \n writing file"
